@@ -8,7 +8,9 @@ const Dashboard = () => {
 
   return (
     <View style={styles.dashboardContainer}>
-      <Text>You have signed in, {state.user}!</Text>
+      <Text style={styles.dashboardText}>
+        You have signed in, {state.user}!
+      </Text>
     </View>
   );
 };
@@ -16,8 +18,17 @@ const Dashboard = () => {
 const styles = StyleSheet.create({
   dashboardContainer: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'center',
+    paddingVertical: 100,
+    paddingHorizontal: 30,
+    backgroundColor: '#C6FCFF',
+  },
+  dashboardText: {
+    fontSize: 60,
+    fontWeight: '600',
+    textAlign: 'center',
+    color: 'purple',
   },
 });
 

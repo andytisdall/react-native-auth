@@ -1,5 +1,9 @@
 import axios from 'axios';
 
 export default axios.create({
-  baseURL: 'http://localhost:4000',
+  // For development, this url needs to be
+  // copied and pasted from the running ngrok service
+  // which is forwarding to the local server
+
+  baseURL: 'http://aeba-192-184-164-49.ngrok.io',
 });
