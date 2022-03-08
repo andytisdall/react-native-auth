@@ -51,7 +51,11 @@ const fetchUser = (dispatch) => async () => {
   const token = await SecureStore.getItemAsync('token');
   if (token) {
     try {
-      const response = await authApi.post('/user', { token });
+      const response = await authApi.get('/user', {
+        headers: {
+          authorization: token,
+        },
+      });
       dispatch({ type: 'SIGN_IN', payload: response.data });
     } catch (err) {
       dispatch({ type: 'ERROR', payload: err.response.data });
