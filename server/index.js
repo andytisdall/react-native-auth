@@ -3,14 +3,12 @@ require('./models/User');
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const cors = require('cors');
 
 const mongoUri = require('./mongo-key');
 const authRouter = require('./routes/auth');
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors());
 
 // connect the auth route to the main app
 app.use(authRouter);
