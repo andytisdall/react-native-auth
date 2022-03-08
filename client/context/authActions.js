@@ -56,7 +56,12 @@ const fetchUser = (dispatch) => async () => {
           authorization: token,
         },
       });
-      dispatch({ type: 'SIGN_IN', payload: response.data });
+      if (response.data.username) {
+        dispatch({
+          type: 'SIGN_IN',
+          payload: { username: response.data.username },
+        });
+      }
     } catch (err) {
       dispatch({ type: 'ERROR', payload: err.response.data });
     }

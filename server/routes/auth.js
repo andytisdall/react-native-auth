@@ -56,7 +56,7 @@ router.get('/user', (req, res) => {
       const user = await User.findOne({ username });
 
       if (user) {
-        res.send(username);
+        res.send({ username: user.username });
       }
     } else {
       // token not valid, do not allow sign in
